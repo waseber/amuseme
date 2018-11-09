@@ -1,0 +1,623 @@
+﻿html, body{
+    height:100%;
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    background-color:#000000;
+}
+
+p, a, ul, li, h1, h2, h3, h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+}
+
+@media screen and (max-width: 638px){
+    h1{
+        font-size:medium;
+    }
+
+    h4{
+        font-size:small;
+    }
+    p{
+        font-size:x-small;
+    }
+}
+
+#BandTitle{
+    top:25%;
+    left:25%;
+    width:50%;
+    margin: 0 auto;
+    padding:0;
+    background: url('../graphics/logo-muse.png') center center no-repeat;
+    background-size:contain;
+/*    background: rgba(0,0,0,0.5);*/
+    text-align: center;
+    position:fixed;
+    z-index:98;
+}
+
+.toggle-mute{
+    top:0;
+    right:15%;
+    color:#FFFFFF;
+    position:fixed;
+    z-index:200;
+}
+
+
+
+#bgVid{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:-100;
+    display:block;
+    padding:0;
+    margin:0;
+}
+
+#BandTitle h1{
+    font-size:99px;
+   
+}
+
+/*Menu*/
+
+.bodyBox-a{
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+    background: transparent;
+    position:fixed;
+    
+}
+
+.navigation-a{
+    /*top:25%;
+    left:0;
+    height:50%;
+    width:100%;
+    position:fixed;
+    z-index:99;*/
+}
+
+#leftNav, #rightNav{
+    top:25%;   
+    height:50%;
+    width:50%;
+    position:fixed;
+    z-index:1000;
+}
+
+#leftNav{
+    left:0;
+    float:left;
+    
+}
+
+#rightNav{
+    right:0;
+    float:right;
+}
+
+.menuItem-a{
+    height:50%;
+    width:50%;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    /*background: url("graphics/muse01.jpg") no-repeat center center;
+    background-size:cover;*/
+    /*delete after*/
+    background: rgba(0,0,0,0.5);
+    z-index:1000;
+    position:fixed;
+    overflow:hidden;
+    border: solid thin #111111;
+    
+}
+
+
+
+.navContent{
+    height:100%;
+    width:100%;
+    position:relative;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+}
+
+#menubox{
+    top:25%;
+    left:0;
+    width:100%;
+    height:50%;
+    background:#000000;
+    position:absolute;
+
+}
+
+#menubox:before{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    top:-8%;
+    bottom:100%;
+    width:120%;
+    height:70px;
+    left:-10%;
+    right:-10%;
+    background:-webkit-radial-gradient(50% 3%, ellipse cover, rgba(00, 00, 00, 1), rgba(97, 97, 97, 0.0) 60%);
+    background:radial-gradient(ellipse at 50% 50%, rgba(00, 00, 00, 1), rgba(97, 97, 97, 0.0) 60%);
+}
+
+    #menubox:after {
+        content: "";
+        position: absolute;
+        z-index: 5;
+        top: 100%;
+        bottom: 0;
+        width: 120%;
+        height: 50px;
+        left: -10%;
+        right: -10%;
+        background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
+        background: radial-gradient(ellipse at 50% -3%, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%);
+    }
+
+.menuItem-a h1{
+    margin-top: 20%;
+}
+
+#rightNav .menuItem-a{
+    float:left;
+}
+#menuItem02:hover ~ #menubox {
+    background:#cccccc;
+    
+}
+
+/*Menu end*/
+
+
+#ringWave01{
+    top:50%;
+    height:50px;
+    width:200px;
+    margin:auto;
+    background: url("../graphics/semiRing01.png") no-repeat center center;
+    background-size:cover;
+    position:fixed;
+    display:none;
+}
+
+
+
+#slides-container{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+}
+
+#slides{
+    width:500%;/*So that the .slide class will end up being 100% of the screen*/
+    height:500%;
+    position:fixed;
+    top:0;
+    left:0;
+    
+}
+
+.slide{
+    position:absolute;
+    top:0;
+    left:0;
+    height:20%;
+    width:20%;
+}
+
+#slide-1{
+    /*cbackground: url("graphics/museLQ01.jpg") no-repeat center center;
+    background-size:cover;*/
+    /*background: #45484d;  Old browsers 
+background: -moz-linear-gradient(-45deg, #45484d 0%, #000000 100%); 
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); 
+background: -webkit-linear-gradient(-45deg, #45484d 0%,#000000 100%); 
+background: -o-linear-gradient(-45deg, #45484d 0%,#000000 100%);
+background: -ms-linear-gradient(-45deg, #45484d 0%,#000000 100%); 
+background: linear-gradient(135deg, #45484d 0%,#000000 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: #000000; /* Old browsers */
+background: -moz-linear-gradient(left, #000000 0%, #727272 50%, #000000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000000), color-stop(50%,#727272), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, #000000 0%,#727272 50%,#000000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, #000000 0%,#727272 50%,#000000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, #000000 0%,#727272 50%,#000000 100%); /* IE10+ */
+background: linear-gradient(to right, #000000 0%,#727272 50%,#000000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+z-index:-10;
+}
+
+
+/*these positions are all very important. Do not touch*/
+#slide-2{
+    background: none;
+    transform:translate(100%,0);
+    -ms-transform:translate(100%,0);
+    -webkit-transform:translate(100%,0);
+}
+
+    
+#slide-3{
+    background: none;
+    transform:translate(200%,0);
+    -ms-transform:translate(200%,0);
+    -webkit-transform:translate(200%,0);
+}
+
+#slide-4{
+    background: none;
+    transform:translate(300%,0);
+    -ms-transform:translate(300%,0);
+    -webkit-transform:translate(300%,0);
+}
+
+#slide-5{
+    background: url("../graphics/earth.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(400%,0);
+    -ms-transform:translate(400%,0);
+    -webkit-transform:translate(400%,0);
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+#slide-6{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ04.jpg") no-repeat top center;
+    background-size:cover;
+    transform:translate(0,100%);
+    -ms-transform:translate(0,100%);
+    -webkit-transform:translate(0,100%);
+    opacity:0.5;
+    filter:alpha(opacity=50);
+}
+
+#slide-6:before {
+        content: "";
+        position: absolute;
+        z-index: 5;
+        top: -10%;
+        bottom: 100%;
+        width: 120%;
+        height: 80px;
+        left: -10%;
+        right: -10%;
+        background: -webkit-radial-gradient(50% 100%, ellipse cover, rgba(96, 251, 202, 0.8), rgba(112, 220, 255, 0.5), rgba(255, 116, 225, 0.0) 50%);
+        /*    -webkit-radial-gradient(80% 10%, circle contain, rgba(96, 251, 202, 0.8), rgba(255, 255, 255, 0.0) 180%), 
+        -webkit-radial-gradient(90% 20%, circle contain, rgba(255, 255, 202, 0.8), rgba(255, 255, 255, 0.0) 60%);
+    background:radial-gradient(ellipse at 50% -3%, rgba(96, 251, 202, 0.8), rgba(112, 220, 255, 0.5), rgba(255, 116, 225, 0.0) 50%), 
+        radial-gradient(circle at 80% 10%, rgba(96, 251, 202, 0.8), rgba(255, 255, 255, 0.0) 2%), 
+        radial-gradient(circle at 90% 20%, rgba(255, 251, 202, 0.8), rgba(255, 255, 255, 0.0) 1%);*/
+    }
+
+#slide-7{
+    background: none;
+    transform:translate(100%,100%);
+    -ms-transform:translate(100%,100%);
+    -webkit-transform:translate(100%,100%);
+}
+
+#slide-8{
+    background: none;
+    transform:translate(200%,100%);
+    -ms-transform:translate(200%,100%);
+    -webkit-transform:translate(200%,100%);
+}
+
+#slide-9{
+    background: none;
+    transform:translate(300%,100%);
+    -ms-transform:translate(300%,100%);
+    -webkit-transform:translate(300%,100%);
+}
+
+#slide-10{
+    background: url("../graphics/stars.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(400%,100%);
+    -ms-transform:translate(400%,100%);
+    -webkit-transform:translate(400%,100%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+/*News*/
+#slide-11{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ04.jpg") no-repeat bottom center;
+    background-size:cover;
+    transform:translate(0,200%);
+    -ms-transform:translate(0,200%);
+    -webkit-transform:translate(0,200%);
+   
+}
+
+
+#slide-12{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ04.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(100%,200%);
+    -ms-transform:translate(100%,200%);
+    -webkit-transform:translate(100%,200%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#slide-13{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ01.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(200%,200%);
+    -ms-transform:translate(200%,200%);
+    -webkit-transform:translate(200%,200%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#slide-14{
+    background: url("../graphics/muse07a.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(300%,200%);
+    -ms-transform:translate(300%,200%);
+    -webkit-transform:translate(300%,200%);
+    
+}
+
+#slide-15{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/stars.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(400%,200%);
+    -ms-transform:translate(400%,200%);
+    -webkit-transform:translate(400%,200%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+    overflow-y:visible;
+}
+
+#slide-16{
+    background: url("../graphics/museLQ08.jpg") no-repeat bottom center;
+    background-size:cover;
+    transform:translate(0,300%);
+    -ms-transform:translate(0,300%);
+    -webkit-transform:translate(0,300%);
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+#slide-17{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ04.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(100%,300%);
+    -ms-transform:translate(100%,300%);
+    -webkit-transform:translate(100%,300%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#slide-18{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ01.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(200%,300%);
+    -ms-transform:translate(200%,300%);
+    -webkit-transform:translate(200%,300%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#slide-19{
+    background: #000000 url("../graphics/muse09.jpg") no-repeat top center;
+    background-size:cover;
+    transform:translate(300%,300%);
+    -ms-transform:translate(300%,300%);
+    -webkit-transform:translate(300%,300%);
+    
+}
+
+#slide-20{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/stars.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(400%,300%);
+    -ms-transform:translate(400%,300%);
+    -webkit-transform:translate(400%,300%);
+    
+}
+
+
+#slide-21{
+    background: url("../graphics/museLQ05.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(0,400%);
+    -ms-transform:translate(0,400%);
+    -webkit-transform:translate(0,400%);
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+#slide-22{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ04.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(100%,400%);
+    -ms-transform:translate(100%,400%);
+    -webkit-transform:translate(100%,400%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#slide-23{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ01.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(200%,400%);
+    -ms-transform:translate(200%,400%);
+    -webkit-transform:translate(200%,400%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#slide-24{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../graphics/museLQ03.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(300%,400%);
+    -ms-transform:translate(300%,400%);
+    -webkit-transform:translate(300%,400%);
+    opacity:0.3;
+    filter:alpha(opacity=30);
+}
+
+#slide-25{
+    background: url("../graphics/museLQ06.jpg") no-repeat center center;
+    background-size:cover;
+    transform:translate(400%,400%);
+    -ms-transform:translate(400%,400%);
+    -webkit-transform:translate(400%,400%);
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+.hands01{
+    top:25%;
+    background: url("../graphics/hands1.png") no-repeat bottom center;
+    background-size:cover;
+    width:200%;
+    height:100%;
+    z-index:100;
+    position:absolute;
+}
+
+.hands02{
+    background: url("../graphics/hands2.png") no-repeat center center;
+    background-size:cover;
+    top:10%;
+    width:200%;
+    height:100%;
+    z-index:100;
+    position:absolute;
+}
+
+.hands03{
+    background: url("../graphics/hands3.png") no-repeat top center;
+    background-size:cover;
+    top:0%;
+    width:200%;
+    height:100%;
+    z-index:100;
+    position:absolute;
+}
+
+#resistance{
+    right:0;
+    background: url("../graphics/resistance.png") repeat-y top center;
+    background-size: cover;
+    width:20%;
+    height:5000px;
+    z-index:300;
+    position:absolute;
+}
+
+#matt{
+    background: url("../graphics/matt.gif") no-repeat top center;
+    background-size:contain;
+    top:0%;
+    width:100%;
+    height:100%;
+    z-index:80;
+    position:absolute;
+}
+
+.slideContent{
+    top:0;
+    height:100%;
+    width:80%;
+    margin:0 auto;
+    position:relative;
+    z-index:1000;
+    
+
+}
+
+.slideContent iframe{
+    margin-top:20%;
+    width:100%;
+    height:80%;
+    background:transparent;
+    display:block;
+    border:none;
+    overflow:hidden;
+}
+
+
+.page-container{
+    margin: 0 auto;
+    height:100%;
+    position:absolute;
+    
+}
+
+/*News Page*/
+
+
+.item-container{
+    margin:3px;
+    padding:0;
+    width:23%;
+    height:40%;
+    min-height:25%;
+    max-height:25%;
+    float:left;
+    overflow:hidden;
+    display:block;
+    position:relative;
+    /*border: solid thin #000000;*/
+}
+
+.item-title{
+    margin:0;
+    padding:0;
+    width:100%;
+    float:left;
+    text-transform:uppercase;
+    text-align:center;
+    
+    
+}
+
+.item-title:hover ~ .item-description{
+    display:block;
+
+}
+
+.item-title h4{
+    font-weight:700;
+}
+
+.item-description{
+    margin:0;
+    padding:0;
+    width:100%;
+    float:left;
+    text-align:center;
+    overflow:hidden;
+    display:none;
+    
+}
+
+#customElement {
+            width: 100%;
+            height: 400px;
+            background: #333;
+        }
